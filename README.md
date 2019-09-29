@@ -16,3 +16,21 @@ Your tasks
 If you use java, you need to make sure that your java program accepts the same input as the provided main.cpp . You also need to develop Red-Black Tree yourself. If you choose this path, you might want to first check which operations of Red-Black Tree you need for this assignment and implement only those operations. Note: You are not allowed to use TreeMap or other Java Red-Black Tree library.
 Program Marking: If your program compiles and runs, you will get 3 points. We will then run your program on 6 test cases: 2 cases would have up to 5,000 sessions, 2 cases would have 5,001 – 500,000 sessions, and 2 cases would have 500,001 – 5,000,000 sessions. For each test case, your program will begiven a total of (log n + 0.01)sec CPU time to find a solution. This time limit includes the time for reading the file, inserting the data to the red-black tree, finding the solution, and printing the solution. The time limit will be rounded up to 2 decimal digit. You can assume your program will have access to at most 12GB RAM. It will be run as a single thread process on a computer with Intel i7 3.4GHz processor. For each test case that your program solves correctly within the given time and memory limit, you will get 2 points.
 Examples of the test cases are available in https://cs.anu.edu.au/courses/comp3600/a2-testCases.zip.
+
+Input to the Program
+The program will accept a single argument, which is the name of the input file. The input file contains N + 1 lines, where N is the number of lecture session intervals.
+The first line consists of a single number, which is N.
+Each line in the next N lines consists of three numbers, separated by a white space. The first number is the session ID, the second number is starting time index, and the third number is the ending time index.
+The session ID is sorted, in the sense that ID-i would be in line-(i + 1). Example:
+5
+1 96 101
+2 46 49
+3 76 77
+4 8 10
+5 4 10
+Output of the Program
+The program outputs two lines to the standard output stream (i.e., use cout if you use C++).
+The first line contains two numbers, each separated by a white space. The first number is the time index with the most number of overlapping lecture sessions. Let’s denote this time index as t. The second number (denoted as K) is the number of lecture sessions that overlap with time index t.
+The second line consists of K numbers sorted in ascending order, each separated by a white space. Each number in this line is the ID of the session that overlaps with time index t.
+Example output for the above input: 82
+45
